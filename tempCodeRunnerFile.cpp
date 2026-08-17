@@ -1,26 +1,36 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
     int a;
-    cout <<"Enter size: ";
+    cout << "Enter size: ";
     cin >> a;
+    int **b = new int*[a];
 
-    int *b = new int[a], odd = 0, even = 0;
-    
-    cout << "Enter elements: ";
+    for(int i = 0; i < a; i++)
+        b[i] = new int[a];
 
-    for(Int i =0; i < a; i++)
+    cout << "Matrix:\n";
+
+    for(int i = 0; i < a; i++)
     {
-        cin >> b[i];
-        if (b[i] % 2  == 0)
-        even += 1;
-        else
-        odd += 1;
+        for(int j = 0; j < a; j++)
+        {
+            cin >> b[i][j];
+        }
     }
-
-    cout << "Odd: " << odd << endl;
-     cout << "Even: " << even << endl;
+    cout << "Upper Triangle:\n";
+    
+    for(int i = 0; i < a; i++)
+    {
+        for(int j = 0; j < a; j++)
+        {
+            if( i >= j)
+                cout << b[i][j] << " ";
+            else
+                cout << "0 ";
+        }
+        cout << endl;
+    }
 }
