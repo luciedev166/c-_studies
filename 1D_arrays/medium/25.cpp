@@ -9,29 +9,28 @@ int main()
     cin >> a;
 
     int *b = new int[a];
-
-    for(int i =0; i < a; i++)
-        cin >> b[i];
-
-    int c[100] = {0};
-    cout << "duplicate values: ";
     for(int i = 0; i < a; i++)
     {
-        bool dup = false;
+        cin >> b[i];
+    }
+
+    int *c = new int[a]();
+    for(int i = 0; i < a; i++)
+    {
+        bool check = false;
         if(c[i] == 0)
         {
             for(int j = i + 1; j < a; j++)
             {
-                if(b[i] == b[j])
+                if (b[i] == b[j])
                 {
-                    dup = true;
+                    check = true;
                     c[j] = 1;
                 }
-
             }
-            if(dup)
-                cout << b[i] << " ";
+            if (check)
+            cout << b[i] << " ";
         }
-    }
 
+    }
 }

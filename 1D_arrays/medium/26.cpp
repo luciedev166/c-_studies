@@ -5,34 +5,33 @@ using namespace std;
 int main()
 {
     int a;
-    cout << "Enter size: ";
+    cout << "enter size: ";
     cin >> a;
 
     int *b = new int[a];
 
-    cout <<"Enter elements: ";
-
     for(int i = 0; i < a; i++)
     cin >> b[i];
 
-    int c;
-    cout << "Enter num of rotations: ";
-    cin >> c;
+    int *c = new int[a];
 
-    for(int i = 0; i < c; i++)
+    int k;
+    cout <<"Enter k: ";
+    cin >> k;
+
+    for(int i = 0; i < k; i++)
     {
-        int first;
-        for(int j = 0; j < a - 1; j++)
+        int last;
+        for(int j = a - 1; j > 0; j--)
         {
-            if(j == 0) first = b[j];
+            if (j == a - 1)
+            last = b[j];
 
-            b[j] = b[j + 1];
+            b[j] = b[j- 1];
         }
-        b[a - 1] = first;
+        b[0] = last;
     }
 
-    cout << "Rotated: ";
-
     for(int i = 0; i < a; i++)
-    cout << b[i]<< " ";
+    cout << b[i] << " ";
 }
