@@ -172,6 +172,7 @@ class MyArray : public List{
         {
             b[i] = c[i];
         }
+        delete[]c;
     }
     
     int replace(int n, int val)
