@@ -9,6 +9,7 @@ class MyArray : public List{
     int *b = new int[100];
 
     public:
+
     void insert(int pos, int n)
     {
         size++;

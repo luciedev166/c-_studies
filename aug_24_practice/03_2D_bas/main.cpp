@@ -23,101 +23,101 @@ int main() {
     // 5 6 7 8
     // 9 10 11 12
 
-    // // --- Test 1: Print all elements column by column ---
-    // A.displayColByCol();
-    // // Expected:
-    // // 1 5 9
-    // // 2 6 10
-    // // 3 7 11
-    // // 4 8 12
+    // --- Test 1: Print all elements column by column ---
+    A.displayColByCol();
+    // Expected:
+    // 1 5 9
+    // 2 6 10
+    // 3 7 11
+    // 4 8 12
 
-    // // --- Test 2: Print matrix in reverse row order (bottom to top) ---
-    // A.displayReverseRows();
-    // // Expected:
-    // // 9 10 11 12
-    // // 5 6 7 8
-    // // 1 2 3 4
+    // --- Test 2: Print matrix in reverse row order (bottom to top) ---
+    A.displayReverseRows();
+    // Expected:
+    // 9 10 11 12
+    // 5 6 7 8
+    // 1 2 3 4
 
-    // // --- Test 3: Print each row in reverse (right to left) ---
-    // A.displayRowsReversed();
-    // // Expected:
-    // // 4 3 2 1
-    // // 8 7 6 5
-    // // 12 11 10 9
+    // --- Test 3: Print each row in reverse (right to left) ---
+    A.displayRowsReversed();
+    // Expected:
+    // 4 3 2 1
+    // 8 7 6 5
+    // 12 11 10 9
 
-    // // --- Test 4: Sum of all elements ---
-    // cout << "sum(): " << A.sum() << endl; // Expected: sum(): 78
+    // --- Test 4: Sum of all elements ---
+    cout << "sum(): " << A.sum() << endl; // Expected: sum(): 78
 
-    // // --- Test 5: Find maximum and minimum element ---
-    // cout << "maxValue(): " << A.maxValue() << endl; // Expected: maxValue(): 12
-    // cout << "minValue(): " << A.minValue() << endl; // Expected: minValue(): 1
+    // --- Test 5: Find maximum and minimum element ---
+    cout << "maxValue(): " << A.maxValue() << endl; // Expected: maxValue(): 12
+    cout << "minValue(): " << A.minValue() << endl; // Expected: minValue(): 1
 
-    // // --- Test 6: Count even and odd numbers ---
-    // cout << "countEven(): " << A.countEven() << endl; // Expected: countEven(): 6
-    // cout << "countOdd(): "  << A.countOdd()  << endl; // Expected: countOdd(): 6
+    // --- Test 6: Count even and odd numbers ---
+    cout << "countEven(): " << A.countEven() << endl; // Expected: countEven(): 6
+    cout << "countOdd(): "  << A.countOdd()  << endl; // Expected: countOdd(): 6
 
-    // // --- Test 7: Row sums and column sums ---
-    // A.displayRowSums(); // Expected: 10 26 42
-    // A.displayColSums(); // Expected: 15 18 21 24
+    // --- Test 7: Row sums and column sums ---
+    A.displayRowSums(); // Expected: 10 26 42
+    A.displayColSums(); // Expected: 15 18 21 24
 
     // // --- Test 17 (partial): A is NOT square ---
-    // cout << "isSquare(): " << A.isSquare() << endl; // Expected: isSquare(): false
+    cout << "isSquare(): " << A.isSquare() << endl; // Expected: isSquare(): false
 
-    // // --- Test 10: Transpose a matrix (must NOT mutate A) ---
-    // MyMatrix At = A.transpose();
-    // At.displayRowByRow();
-    // // Expected:
-    // // 1 5 9
-    // // 2 6 10
-    // // 3 7 11
-    // // 4 8 12
-    // A.displayRowByRow(); // prove A is untouched
-    // // Expected:
-    // // 1 2 3 4
-    // // 5 6 7 8
-    // // 9 10 11 12
+    // --- Test 10: Transpose a matrix (must NOT mutate A) ---
+    MyMatrix At = A.transpose();
+    At.displayRowByRow();
+    // Expected:
+    // 1 5 9
+    // 2 6 10
+    // 3 7 11
+    // 4 8 12
+    A.displayRowByRow(); // prove A is untouched
+    // Expected:
+    // 1 2 3 4
+    // 5 6 7 8
+    // 9 10 11 12
 
-    // // --- Test 11: Swap two rows (mutates A) ---
-    // A.swapRows(0, 2);
-    // A.displayRowByRow();
-    // // Expected:
-    // // 9 10 11 12
-    // // 5 6 7 8
-    // // 1 2 3 4
+    // --- Test 11: Swap two rows (mutates A) ---
+    A.swapRows(0, 2);
+    A.displayRowByRow();
+    // Expected:
+    // 9 10 11 12
+    // 5 6 7 8
+    // 1 2 3 4
 
-    // // --- Test 12: Swap two columns (mutates A further, on TOP of the row swap) ---
-    // A.swapCols(0, 3);
-    // A.displayRowByRow();
-    // // Expected:
-    // // 12 10 11 9
-    // // 8 6 7 5
-    // // 4 2 3 1
+    // --- Test 12: Swap two columns (mutates A further, on TOP of the row swap) ---
+    A.swapCols(0, 3);
+    A.displayRowByRow();
+    // Expected:
+    // 12 10 11 9
+    // 8 6 7 5
+    // 4 2 3 1
 
-    // // ================= PART 2: matrix B (4x4, square) =================
-    // // 1  2  3  4
-    // // 5  6  7  8
-    // // 9 10 11 12
-    // // 13 14 15 17   <- note: 17, not 16, so main/anti diagonal sums differ
-    // MyMatrix B(4, 4);
-    // val = 1;
-    // for (int r = 0; r < 4; r++)
-    //     for (int c = 0; c < 4; c++)
-    //         B.set(r, c, val++);
-    // B.set(3, 3, 17);
+    // ================= PART 2: matrix B (4x4, square) =================
+    // 1  2  3  4
+    // 5  6  7  8
+    // 9 10 11 12
+    // 13 14 15 17   <- note: 17, not 16, so main/anti diagonal sums differ
+    MyMatrix B(4, 4);
+    val = 1;
+    for (int r = 0; r < 4; r++)
+        for (int c = 0; c < 4; c++)
+            B.set(r, c, val++);
+    B.set(3, 3, 17);
 
-    // cout << "isSquare(): " << B.isSquare() << endl; // Expected: isSquare(): true
+    cout << "isSquare(): " << B.isSquare() << endl; // Expected: isSquare(): true
 
-    // // --- Test 8: Print main diagonal ---
-    // B.displayMainDiagonal(); // Expected: 1 6 11 17
+    // --- Test 8: Print main diagonal ---
+    B.displayMainDiagonal(); // Expected: 1 6 11 17
 
-    // // --- Test 9: Print anti-diagonal ---
-    // B.displayAntiDiagonal(); // Expected: 4 7 10 13
+    // --- Test 9: Print anti-diagonal ---
+    B.displayAntiDiagonal(); // Expected: 4 7 10 13
 
-    // // --- Test 15: Sum of main diagonal elements ---
-    // cout << "sumMainDiagonal(): " << B.sumMainDiagonal() << endl; // Expected: sumMainDiagonal(): 35
+    // --- Test 15: Sum of main diagonal elements ---
+    cout << "sumMainDiagonal(): " << B.sumMainDiagonal() << endl; // Expected: sumMainDiagonal(): 35
 
-    // // --- Test 16: Sum of anti-diagonal elements ---
-    // cout << "sumAntiDiagonal(): " << B.sumAntiDiagonal() << endl; // Expected: sumAntiDiagonal(): 34
+    // --- Test 16: Sum of anti-diagonal elements ---
+    cout << "sumAntiDiagonal(): " << B.sumAntiDiagonal() << endl; // Expected: sumAntiDiagonal(): 34
 
     // // --- Test 13: Print upper triangular matrix ---
     // B.displayUpperTriangular();
