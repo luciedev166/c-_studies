@@ -14,7 +14,8 @@ class Roster{
     Roster(int initialCapacity)
     {
         capacity = initialCapacity;
-        students = (Student*) calloc(capacity, sizeof(Student));
+        // students = (Student*) calloc(capacity, sizeof(Student));
+        students = new Student[capacity];
         size =0;
         locked = false;
     }
@@ -22,9 +23,31 @@ class Roster{
 
     ~Roster()
     {
-        free(students);
+        // free(students);
+        delete [] students;
     }
 
+    // bool addStudent(Student s)
+    // {
+    //     if (locked) return false;
+
+    //     if(s.gender != 'm' && s.gender != 'f')
+    //     {
+    //         s.gender = 'm';
+    //     }
+    //     if(size == capacity)
+    //     {
+    //         Student *temp = (Student*) realloc(students, (capacity + 2) * sizeof(Student));
+    //         if(temp == NULL) return false;
+
+    //         students = temp;
+    //         capacity += 2;
+    //     }
+    //     students[size++] = s;
+    //     return true;
+    // }
+
+    // new / delete version:
     bool addStudent(Student s)
     {
         if (locked) return false;
@@ -35,16 +58,21 @@ class Roster{
         }
         if(size == capacity)
         {
-            Student *temp = (Student*) realloc(students, (capacity + 2) * sizeof(Student));
-            if(temp == NULL) return false;
+            int newCap = capacity + 3;
+            Student *temp = new Student[newCap];
 
+            for(int i = 0; i < size; i++)
+            {
+                temp[i] = students[i];
+            }
+            delete [] students;
             students = temp;
-            capacity += 2;
+            capacity = newCap;
         }
         students[size++] = s;
         return true;
-    }
-
+    }  
+    
     void finalizeRoster()
     {
         locked = true;
