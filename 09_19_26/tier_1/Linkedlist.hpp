@@ -7,8 +7,13 @@ struct Node {
     int data;
     Node* next;
     Node* prev;
+    Node() : elem(0), next(nullptr), prev(nullptr) {}
     Node(int val) : data(val), next(nullptr), prev(nullptr) {}
 };
+
+struct Node{
+    int 
+}
 
 class DoublyLinkedList {
 private:

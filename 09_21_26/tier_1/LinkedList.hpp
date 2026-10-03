@@ -8,8 +8,17 @@ struct Node{
     int elem;
     Node *next;
     Node *prev;
+    Node() : elem(0), next(nullptr), prev(nullptr) {}
     Node(int val) : elem(val), next(nullptr), prev(nullptr) {}
     Node(int val, Node *n, Node *p) : elem(val), next(n), prev(p) {}
+};
+
+struct Node{
+    int elem;
+    Node *next;
+    Node *prev;
+    Node(int val): elem(val), next(nullptr), prev(nullptr) {}
+    Node(int val, Node *n, Node *p): elem(val), next(n), prev(p) {}
 };
 
 class DoublyLinkedList {
@@ -18,34 +27,14 @@ private:
     Node tail;
     int size;
 
-    // void addBetween(int val, Node *pred, Node *succ)
-    // {
-    //     Node *n = new Node(val, succ, pred);
-    //     succ->prev = n;
-    //     pred->next = n;
-    //     size++;
-    // }
-
     void addBetween(int val, Node *pred, Node *succ)
     {
-        Node * n =  new Node(val, succ, pred);
-        n -> next = succ;
-        succ -> prev = n;
-        pred -> next = n;
+        Node *n = new Node(val, succ, pred);
+        n->next = succ;
+        pred->next = n;
+        succ->prev = n;
         size++;
-
     }
-
-    // int removeNode(Node* target) {
-    //     Node* pred = target->prev;
-    //     Node* succ = target->next;
-    //     pred->next = succ;
-    //     succ->prev = pred;
-    //     int val = target->elem;
-    //     delete target;
-    //     size--;
-    //     return val;
-    // }
 
     int removeNode(Node *target)
     {
