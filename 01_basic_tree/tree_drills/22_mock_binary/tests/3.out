@@ -1,0 +1,19 @@
+Root added: 1
+Added 2 as left child of 1
+1 is not a leaf
+Attached under 2 (T1 size 0, T2 size 0)
+1 -> 2 -> 100 -> 101 -> 200 -> 201 -> NULL
+Size: 6
+2 has two children
+Attached under 201 (T1 size 0, T2 size 0)
+1 -> 2 -> 100 -> 101 -> 200 -> 201 -> 100 -> 101 -> 200 -> 201 -> NULL
+101 -> 100 -> 2 -> 200 -> 101 -> 100 -> 201 -> 200 -> 201 -> 1 -> NULL
+101 -> 100 -> 101 -> 100 -> 201 -> 200 -> 201 -> 200 -> 2 -> 1 -> NULL
+Size: 10
+Height: 5
+Removed 1
+2 -> 100 -> 101 -> 200 -> 201 -> 100 -> 101 -> 200 -> 201 -> NULL
+Size: 9
+Sibling of 100: 200
+Sibling of 200: 100
+2 has no sibling

@@ -1,0 +1,19 @@
+root 1
+left 1 2
+attach 1
+attach 2
+pre
+size
+remove 2
+attach 201
+pre
+in
+post
+size
+height
+remove 1
+pre
+size
+sibling 100
+sibling 200
+sibling 2

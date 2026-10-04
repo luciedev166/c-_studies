@@ -1,0 +1,22 @@
+root 10
+root 99
+child 10 20
+child 10 30
+child 30 40
+child 30 50
+child 50 60
+child 77 5
+depth 60
+depth 10
+depth 99
+path 60
+path 20
+path 99
+removeleaf 30
+removeleaf 60
+removeleaf 20
+level
+indent
+height
+removeleaf 10
+size

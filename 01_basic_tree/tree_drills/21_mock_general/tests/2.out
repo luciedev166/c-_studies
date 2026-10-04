@@ -1,0 +1,25 @@
+Root added: 10
+Root not added
+Added 20 under 10
+Added 30 under 10
+Added 40 under 30
+Added 50 under 30
+Added 60 under 50
+Parent 77 not found
+Depth of 60: 3
+Depth of 10: 0
+99 not found
+10 -> 30 -> 50 -> 60 -> NULL
+10 -> 20 -> NULL
+99 not found
+30 is not a leaf
+Removed 60
+Removed 20
+10 -> 30 -> 40 -> 50 -> NULL
+10
+  30
+    40
+    50
+Height: 2
+10 is not a leaf
+Size: 4

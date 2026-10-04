@@ -1,0 +1,23 @@
+Root added: 1
+Added 2 under 1
+Added 3 under 1
+Added 4 under 1
+Added 5 under 2
+Added 6 under 2
+Added 7 under 4
+1 -> 2 -> 5 -> 6 -> 3 -> 4 -> 7 -> NULL
+5 -> 6 -> 2 -> 3 -> 7 -> 4 -> 1 -> NULL
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> NULL
+1
+  2
+    5
+    6
+  3
+  4
+    7
+Height: 2
+Leaves: 4
+Nodes: 7
+Sum: 28
+Max: 7
+Size: 7

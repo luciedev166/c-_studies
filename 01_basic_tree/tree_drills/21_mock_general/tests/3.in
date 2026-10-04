@@ -1,0 +1,26 @@
+pre
+post
+level
+indent
+height
+leaves
+nodes
+sum
+max
+size
+root 5
+height
+max
+removeleaf 5
+size
+pre
+root 8
+child 8 9
+child 8 3
+sum
+clear
+pre
+size
+root 1
+child 1 2
+pre

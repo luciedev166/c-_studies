@@ -1,0 +1,24 @@
+Root added: 50
+Root not added
+Added 30 as left child of 50
+Added 70 as right child of 50
+Added 20 as left child of 30
+Added 40 as right child of 30
+Added 60 as left child of 70
+30 already has a left child
+Added 80 as right child of 70
+20 -> 30 -> 40 -> 50 -> 60 -> 70 -> 80 -> NULL
+Replaced 40 with 45
+99 not found
+20 -> 30 -> 45 -> 50 -> 60 -> 70 -> 80 -> NULL
+Removed 20
+Removed 60
+30 -> 45 -> 50 -> 70 -> 80 -> NULL
+Removed 70
+30 -> 45 -> 50 -> 80 -> NULL
+Removed 30
+50 has two children
+99 not found
+50 -> 45 -> 80 -> NULL
+Size: 3
+Height: 1

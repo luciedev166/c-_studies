@@ -1,0 +1,25 @@
+NULL
+NULL
+NULL
+Height: -1
+Leaves: 0
+Nodes: 0
+Sum: 0
+Max: -1
+Size: 0
+Root added: 5
+Height: 0
+Max: 5
+Removed 5
+Size: 0
+NULL
+Root added: 8
+Added 9 under 8
+Added 3 under 8
+Sum: 20
+Cleared
+NULL
+Size: 0
+Root added: 1
+Added 2 under 1
+1 -> 2 -> NULL

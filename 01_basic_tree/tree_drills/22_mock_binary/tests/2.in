@@ -1,0 +1,24 @@
+root 50
+root 51
+left 50 30
+right 50 70
+left 30 20
+right 30 40
+left 70 60
+left 30 25
+right 70 80
+in
+set 40 45
+set 99 1
+in
+remove 20
+remove 60
+in
+remove 70
+in
+remove 30
+remove 50
+remove 99
+pre
+size
+height
