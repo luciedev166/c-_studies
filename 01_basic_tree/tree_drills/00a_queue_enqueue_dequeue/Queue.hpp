@@ -13,15 +13,15 @@ using namespace std;
 //  BELOW the "DO NOT CHANGE" line  = helper functions that main.cpp relies on.
 //                                    They never call the function(s) you're
 //                                    practicing, so a bug in yours can't break them.
-//  (The QNode struct, members, constructor and destructor are given scaffolding.
+//  (The Node struct, members, constructor and destructor are given scaffolding.
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
 
-struct QNode {
+struct Node {
     int elem;
-    QNode *next;
-    QNode() : elem(0), next(nullptr) {}
-    QNode(int val) : elem(val), next(nullptr) {}
+    Node *next;
+    Node() : elem(0), next(nullptr) {}
+    Node(int val) : elem(val), next(nullptr) {}
 };
 
 // A queue is a singly linked list that you only touch at TWO places:
@@ -29,8 +29,8 @@ struct QNode {
 //   tail = the BACK of the line  (people join here     -> enqueue)
 class Queue {
 private:
-    QNode *head;   // front
-    QNode *tail;   // back
+    Node *head;   // front
+    Node *tail;   // back
     int size;
 
 public:
@@ -46,7 +46,7 @@ public:
 
     void enqueue(int val)
     {
-        QNode *n = new QNode(val);
+        Node *n = new Node(val);
         if (head == nullptr) head = tail = n;     // EDGE CASE: empty queue, the new node is front AND back
         else { tail->next = n; tail = n; }        // otherwise it joins the BACK (same as addBack)
         size++;
@@ -55,7 +55,7 @@ public:
     int dequeue()
     {
         if (head == nullptr) { cout << "Queue empty, can't dequeue" << endl; return -1; }
-        QNode *old = head;
+        Node *old = head;
         int val = old->elem;
         head = head->next;                        // the front leaves (same as removeFront)
         if (head == nullptr) tail = nullptr;      // EDGE CASE: queue just became empty, tail must not dangle
@@ -87,10 +87,10 @@ public:
 
     void clear()
     {
-        QNode *cur = head;
+        Node *cur = head;
         while (cur != nullptr)
         {
-            QNode *nxt = cur->next;
+            Node *nxt = cur->next;
             delete cur;
             cur = nxt;
         }
@@ -102,7 +102,7 @@ public:
     // front to back, e.g.  10 -> 20 -> 30 -> NULL   (empty queue prints just NULL)
     void printQueue()
     {
-        for (QNode *cur = head; cur != nullptr; cur = cur->next)
+        for (Node *cur = head; cur != nullptr; cur = cur->next)
             cout << cur->elem << " -> ";
         cout << "NULL" << endl;
     }
@@ -113,8 +113,8 @@ public:
     string integrity()
     {
         int count = 0;
-        QNode *cur = head;
-        QNode *last = nullptr;
+        Node *cur = head;
+        Node *last = nullptr;
         while (cur != nullptr)
         {
             last = cur;

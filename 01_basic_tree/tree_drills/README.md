@@ -76,6 +76,7 @@ A queue is a linked list where you add at the **tail** and remove from the **hea
 
 ## Conventions the tests assume
 
+- Queue drills (00a, 00b) use a plain `Node` with `elem` and `next`, like your list drills. (In the tree drills, `Node` is the TREE node, so the little queue helper inside `NodeQueue` uses its own node type called `QNode`. You never write that part.)
 - Print format is the same as your list drills: `1 -> 2 -> 3 -> NULL`. Empty tree: `NULL`. (`printIndented` is the exception: one node per line, 2 spaces per depth.)
 - Children are visited in the order they were added.
 - **Errors:** return the value the folder says (`nullptr`, `-1`, or `false`) and change nothing. The message you print doesn't matter in the drills.
