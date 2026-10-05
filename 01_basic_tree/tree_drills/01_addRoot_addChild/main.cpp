@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------
  * addRoot(val): create the root of an EMPTY tree.  addChild(p, val): add a new LAST child under node p.  Both return the new node.
  *
- * HOW TO USE
+ * HOW TO USE  
  *   1. Open GeneralTree.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.
  *   2. Compile and run (AddressSanitizer also catches leaks and bad memory access):

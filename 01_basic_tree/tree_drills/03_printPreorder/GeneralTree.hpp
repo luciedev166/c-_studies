@@ -12,7 +12,7 @@ using namespace std;
 //                                    then comment them out and rewrite them yourself.
 //  BELOW the "DO NOT CHANGE" line  = helper functions that main.cpp relies on.
 //                                    They never call the function(s) you're
-//                                    practicing, so a bug in yours can't break them.
+//                                      practicing, so a bug in yours can't break them.
 //  (The Node struct, NodeQueue, members, constructor and destructor are given scaffolding.
 //   Keep the names root / size / elem / parent / firstChild / lastChild / nextSibling: the helpers use them.)
 // =====================================================================

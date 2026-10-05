@@ -1,5 +1,5 @@
 /*
- * DRILL: countNodes, countLeaves
+ * DRILL: countNodes, countLeaves 
  * ------------------------------------------------------------------
  * countNodes(p) / countLeaves(p): how many nodes / leaves are in the subtree under p (p included). The no-argument versions do the whole tree.
  *
@@ -115,7 +115,7 @@ inline void expectNode(const string &what, Node *got, Node *want)
     curFails += "      " + what + ": got      [" + describe(got) + "]\n"
               + "      " + string(what.size() + 2, ' ') + "expected [" + describe(want) + "]\n";
 }
-
+ 
 // size + integrity: should hold after (almost) every operation.
 inline void expectTree(GeneralTree &t, int wantSize)
 {

@@ -131,11 +131,11 @@ inline void expectTree(GeneralTree &t, int wantSize)
        / \      |
       5   6     7
 */
-struct Sample { Node *n1, *n2, *n3, *n4, *n5, *n6, *n7; };
+struct Sample { Node *n1, *n2, *n3, *n4, *n5, *n6, *n7; }; 
 inline Sample buildSample(GeneralTree &t)
 {
     Sample s;
-    s.n1 = t.addRoot(1);
+    s.n1 = t.addRoot(1); 
     s.n2 = t.addChild(s.n1, 2);
     s.n3 = t.addChild(s.n1, 3);
     s.n4 = t.addChild(s.n1, 4);
@@ -144,7 +144,7 @@ inline Sample buildSample(GeneralTree &t)
     s.n7 = t.addChild(s.n4, 7);
     return s;
 }
-
+ 
 /*
  Second tree:
               10

@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------
  * front(): peek at the front item WITHOUT removing it.  isEmpty(): is the queue empty?  getSize(): how many items?
  *
- * HOW TO USE
+ * HOW TO USE 
  *   1. Open Queue.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.
  *   2. Compile and run (AddressSanitizer also catches leaks and bad memory access):

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+ 
 // =====================================================================
 //  DRILL: countNodes, countLeaves
 //
@@ -82,10 +82,12 @@ public:
 
     int countNodes(Node *p)
     {
-        if (p == nullptr) return 0;
-        int total = 1;                                         // this node...
-        for (Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
-            total += countNodes(c);                            // ...plus everything under each child
+        if(p == nullptr) return 0;
+        int total = 1;
+        for(Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+        {
+            total += countNodes(c);
+        }
         return total;
     }
 
@@ -96,11 +98,13 @@ public:
 
     int countLeaves(Node *p)
     {
-        if (p == nullptr) return 0;
-        if (p->firstChild == nullptr) return 1;                // a leaf counts as one
+        if(p == nullptr) return 0;
+        if(p->firstChild == nullptr) return 1;
         int total = 0;
-        for (Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+        for(Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+        {
             total += countLeaves(c);
+        }
         return total;
     }
 

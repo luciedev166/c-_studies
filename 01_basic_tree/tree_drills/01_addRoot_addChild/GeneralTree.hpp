@@ -17,13 +17,15 @@ using namespace std;
 //   Keep the names root / size / elem / parent / firstChild / lastChild / nextSibling: the helpers use them.)
 // =====================================================================
 
-struct Node {
+//TODO MAKE STRUCT NODE:
+struct Node{
     int elem;
     Node *parent;
-    Node *firstChild;    // head of THIS node's list of children
-    Node *lastChild;     // tail of THIS node's list of children
-    Node *nextSibling;   // next node in the PARENT's list of children
-    Node(int val, Node *par) : elem(val), parent(par), firstChild(nullptr), lastChild(nullptr), nextSibling(nullptr) {}
+    Node *firstChild;
+    Node *lastChild;
+    Node *nextSibling;
+    Node (int val, Node *p): elem(val), parent(p), firstChild(nullptr), lastChild(nullptr),
+    nextSibling(nullptr) {}
 };
 
 // A plain linked-list queue of Node pointers (same idea as the Part 0 drills).
@@ -69,40 +71,45 @@ private:
     int size;
 
 public:
-    GeneralTree() : root(nullptr), size(0) {}
-
+    //TODO General TREE CONSTRUCTOR
+    GeneralTree(): root(nullptr), size(0) {}
     ~GeneralTree()
     {
         clear();
     }
-
+ 
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: addRoot, addChild
     // ---------------------------------------------------------------
 
+    //TODO: ADDCHILD AND ADDROOT
     Node *addRoot(int val)
     {
-        if (root != nullptr) { cout << "Tree is not empty, can't add a root" << endl; return nullptr; }
-        root = new Node(val, nullptr);
+        if(root != nullptr) return nullptr;
+        Node *n = new Node(val, nullptr);
+        root = n;
         size = 1;
-        return root;
+        return n;
     }
 
     Node *addChild(Node *p, int val)
     {
-        if (p == nullptr) { cout << "Invalid position" << endl; return nullptr; }
-        Node *n = new Node(val, p);              // the new node remembers its parent
-        if (p->firstChild == nullptr)            // EDGE CASE: p had no children yet, so n is
-            p->firstChild = p->lastChild = n;    //   both the first AND the last child
+        if(p == nullptr) return nullptr;
+    
+        Node *n = new Node(val, p);
+        if(p->firstChild == nullptr)
+        {
+            p->firstChild = p->lastChild = n;
+        }
         else
         {
-            p->lastChild->nextSibling = n;       // exactly addBack on a list that has a tail
+            p->lastChild->nextSibling = n;
             p->lastChild = n;
         }
         size++;
         return n;
     }
-
+ 
     //=====================================================================
     //======== DO NOT CHANGE ANYTHING UNDER THIS LINE ========
     //=====================================================================

@@ -8,7 +8,7 @@ using namespace std;
 // =====================================================================
 //  DRILL: removeLeaf
 //
-//  ABOVE the "DO NOT CHANGE" line  = YOUR AREA. Study the solved function(s),
+//  ABOVE the "DO NOT CHANGE" l ine  = YOUR AREA. Study the solved function(s),
 //                                    then comment them out and rewrite them yourself.
 //  BELOW the "DO NOT CHANGE" line  = helper functions that main.cpp relies on.
 //                                    They never call the function(s) you're
@@ -79,35 +79,39 @@ public:
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: removeLeaf
     // ---------------------------------------------------------------
-
-    int removeLeaf(Node *p)
+    int removeLeaf(Node *n)
     {
-        if (p == nullptr) { cout << "Invalid position" << endl; return -1; }
-        if (p->firstChild != nullptr) { cout << "Not a leaf, can't remove" << endl; return -1; }
+        if(n == nullptr) return -1;
+        if(n->firstChild != nullptr) return -1;
 
-        if (p->parent == nullptr)                              // EDGE CASE: p is the root (and a leaf = the ONLY node)
+        Node *par = n->parent;
+        if(par == nullptr)
         {
             root = nullptr;
         }
         else
         {
-            Node *par = p->parent;
-            if (par->firstChild == p)                          // p is the FIRST child (like removeFront)
+            if(par->firstChild == n)
             {
-                par->firstChild = p->nextSibling;
-                if (par->firstChild == nullptr)                // EDGE CASE: it was the ONLY child, so the
-                    par->lastChild = nullptr;                  //   parent's list is empty now: fix the tail too
+                par->firstChild = n->nextSibling;
+                if(par->firstChild == nullptr) {par->lastChild = nullptr;}
             }
-            else                                               // p is later in the list: find the node before it
+            else
             {
-                Node *prev = par->firstChild;
-                while (prev->nextSibling != p) prev = prev->nextSibling;
-                prev->nextSibling = p->nextSibling;            // skip over p
-                if (par->lastChild == p) par->lastChild = prev;  // EDGE CASE: p was the LAST child (like removeBack)
+                Node *cur = par->firstChild;
+                while(cur->nextSibling != n)
+                {
+                    cur = cur->nextSibling;
+                }
+                cur->nextSibling = n->nextSibling;
+                if(cur->nextSibling == nullptr)
+                {
+                    par->lastChild = cur;
+                }
             }
         }
-        int val = p->elem;
-        delete p;
+        int val = n->elem;
+        delete n;
         size--;
         return val;
     }

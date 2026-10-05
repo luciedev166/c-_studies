@@ -20,7 +20,7 @@ using namespace std;
 struct Node {
     int elem;
     Node *parent;
-    Node *left;
+    Node *left; 
     Node *right;
     Node(int val, Node *par) : elem(val), parent(par), left(nullptr), right(nullptr) {}
 };

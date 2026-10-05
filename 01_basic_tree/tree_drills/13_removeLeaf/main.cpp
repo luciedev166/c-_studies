@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------
  * removeLeaf(p): remove node p if it is a leaf. It is "remove from a linked list" again: p lives in its PARENT's child list.
  *
- * HOW TO USE
+ * HOW TO USE  
  *   1. Open GeneralTree.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.
  *   2. Compile and run (AddressSanitizer also catches leaks and bad memory access):
@@ -36,7 +36,7 @@ using namespace std;
 // ------------------------------------------------------------------
 //  Tiny test harness (don't edit)
 // ------------------------------------------------------------------
-static int testsRun = 0, testsPassed = 0;
+static int testsRun = 0, testsPassed = 0; 
 static bool curOk = true;
 static string curFails;
 

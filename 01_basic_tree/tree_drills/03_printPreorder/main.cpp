@@ -2,7 +2,7 @@
  * DRILL: printPreorder
  * ------------------------------------------------------------------
  * printPreorder(): visit the node FIRST, then each child (left to right), recursively.
- *
+ * 
  * HOW TO USE
  *   1. Open GeneralTree.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.

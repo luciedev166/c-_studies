@@ -41,7 +41,7 @@ static string curFails;
 // Run f() and return everything it printed, keeping it off the screen.
 template <typename F>
 string capture(F f)
-{
+{  
     ostringstream buf;
     streambuf *old = cout.rdbuf(buf.rdbuf());
     f();

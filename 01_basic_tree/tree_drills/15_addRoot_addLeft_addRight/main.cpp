@@ -11,7 +11,7 @@
  *      No ASan on your machine? Just drop "-fsanitize=address".
  *   3. Every test prints one line: PASS, or FAIL plus what you returned vs. what was expected.
  *      If the program CRASHES, the last "- ..." line on screen is the test that crashed it.
- *
+ * 
  * WHAT A FAIL MEANS
  *   shape     -> the tree doesn't look the way it should. Shapes are written elem(left,right):
  *                "-" means no child, a leaf is just its number, e.g. 1(2(4,5),3(-,6)).

@@ -2,8 +2,8 @@
 #define GENERALTREE_HPP
 
 #include <iostream>
-#include <string>
-using namespace std;
+#include <string> 
+using namespace std; 
 
 // =====================================================================
 //  DRILL: isRoot, isLeaf, isInternal, isEmpty, getSize
@@ -79,32 +79,29 @@ public:
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: isRoot, isLeaf, isInternal, isEmpty, getSize
     // ---------------------------------------------------------------
-
-    bool isRoot(Node *p)
+    bool isRoot(Node *n)
     {
-        return p != nullptr && p->parent == nullptr;      // only the root has no parent
+        if(n == nullptr){return false;}
+        return n->parent == nullptr;
     }
-
-    bool isLeaf(Node *p)
+    bool isLeaf(Node *n)
     {
-        return p != nullptr && p->firstChild == nullptr;  // no children at all
+        if(n == nullptr){return false;}
+        return n->firstChild == nullptr;
     }
-
-    bool isInternal(Node *p)
+    bool isInternal(Node *n)
     {
-        return p != nullptr && p->firstChild != nullptr;  // at least one child
+        if(n == nullptr){return false;}
+        return n->firstChild != nullptr;
     }
-
     bool isEmpty()
     {
-        return root == nullptr;
+        return size == 0;
     }
-
     int getSize()
     {
         return size;
     }
-
     //=====================================================================
     //======== DO NOT CHANGE ANYTHING UNDER THIS LINE ========
     //=====================================================================

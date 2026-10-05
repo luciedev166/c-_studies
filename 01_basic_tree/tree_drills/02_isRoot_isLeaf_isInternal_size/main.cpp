@@ -2,8 +2,8 @@
  * DRILL: isRoot, isLeaf, isInternal, isEmpty, getSize
  * ------------------------------------------------------------------
  * Five tiny questions about a node (or the whole tree). All of them are one-liners once you know the pointer rule.
- *
- * HOW TO USE
+ * 
+ * HOW TO USE 
  *   1. Open GeneralTree.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.
  *   2. Compile and run (AddressSanitizer also catches leaks and bad memory access):
@@ -30,8 +30,8 @@
 #include <string>
 #include "GeneralTree.hpp"
 using namespace std;
-
-// ------------------------------------------------------------------
+ 
+// ----------------------------------- -------------------------------
 //  Tiny test harness (don't edit)
 // ------------------------------------------------------------------
 static int testsRun = 0, testsPassed = 0;

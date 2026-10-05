@@ -74,7 +74,7 @@ public:
     ~GeneralTree()
     {
         clear();
-    }
+    } 
 
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: depth
@@ -82,9 +82,9 @@ public:
 
     int depth(Node *p)
     {
-        if (p == nullptr) return -1;
+        if(p == nullptr) return -1;
         int d = 0;
-        while (p->parent != nullptr)                           // climb to the root, counting the steps
+        while(p->parent != nullptr)
         {
             d++;
             p = p->parent;

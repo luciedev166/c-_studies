@@ -80,21 +80,21 @@ public:
     //  FUNCTION UNDER PRACTICE: height
     // ---------------------------------------------------------------
 
-    int height(Node *p)
+    int height(Node *n)
     {
-        if (p == nullptr) return -1;                           // so that a leaf comes out as -1 + 1 = 0
+        if(n == nullptr) return -1;
         int tallest = -1;
-        for (Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+        for(Node *c = n->firstChild; c != nullptr; c=c->nextSibling)
         {
             int h = height(c);
-            if (h > tallest) tallest = h;
+            if(h > tallest) tallest = h;
         }
         return tallest + 1;
     }
 
     int height()
     {
-        return height(root);                                   // empty tree: -1
+        return height(root);
     }
 
     //=====================================================================
@@ -107,7 +107,7 @@ public:
         if (root != nullptr) { cout << "Tree is not empty, can't add a root" << endl; return nullptr; }
         root = new Node(val, nullptr);
         size = 1;
-        return root;
+        return root; 
     }
 
     Node *addChild(Node *p, int val)

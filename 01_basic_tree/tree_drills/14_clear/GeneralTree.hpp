@@ -68,7 +68,7 @@ private:
     Node *root;
     int size;
 
-public:
+public: 
     GeneralTree() : root(nullptr), size(0) {}
 
     ~GeneralTree()
@@ -81,24 +81,24 @@ public:
     // ---------------------------------------------------------------
 
 private:
-    void clearHelper(Node *p)
+    void clearHelper(Node *n)
     {
-        if (p == nullptr) return;
-        Node *c = p->firstChild;
-        while (c != nullptr)
+        if(n == nullptr) return;
+        Node *c = n->firstChild;
+        while(c != nullptr)
         {
-            Node *nxt = c->nextSibling;                        // save it BEFORE c is deleted
+            Node *nxt = c->nextSibling;
             clearHelper(c);
             c = nxt;
         }
-        delete p;                                              // POSTORDER: children first, the node last
+        delete n;
     }
-
+ 
 public:
     void clear()
     {
         clearHelper(root);
-        root = nullptr;                                        // don't leave root dangling
+        root = nullptr;
         size = 0;
     }
 

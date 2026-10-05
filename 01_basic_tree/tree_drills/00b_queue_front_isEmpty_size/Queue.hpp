@@ -7,7 +7,7 @@ using namespace std;
 
 // =====================================================================
 //  DRILL: front, isEmpty, getSize
-//
+// 
 //  ABOVE the "DO NOT CHANGE" line  = YOUR AREA. Study the solved function(s),
 //                                    then comment them out and rewrite them yourself.
 //  BELOW the "DO NOT CHANGE" line  = helper functions that main.cpp relies on.
@@ -46,15 +46,14 @@ public:
 
     int front()
     {
-        if (head == nullptr) { cout << "Queue empty, no front" << endl; return -1; }
-        return head->elem;                        // look at the front WITHOUT removing it
+        if(size == 0){cout<<"List is empty"<<endl; return -1;}
+        return head->elem;
     }
 
     bool isEmpty()
     {
-        return head == nullptr;
+        return size == 0;
     }
-
     int getSize()
     {
         return size;
