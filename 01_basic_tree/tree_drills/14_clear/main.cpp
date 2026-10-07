@@ -137,7 +137,7 @@ inline Sample buildSample(GeneralTree &t)
     Sample s;
     s.n1 = t.addRoot(1); 
     s.n2 = t.addChild(s.n1, 2);
-    s.n3 = t.addChild(s.n1, 3);
+    s.n3 = t.addChild(s.n1, 3); 
     s.n4 = t.addChild(s.n1, 4);
     s.n5 = t.addChild(s.n2, 5);
     s.n6 = t.addChild(s.n2, 6);

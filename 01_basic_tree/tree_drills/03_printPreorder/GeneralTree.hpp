@@ -75,25 +75,34 @@ public:
     {
         clear();
     }
-
+ 
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: printPreorder
     // ---------------------------------------------------------------
 
 private:
-    void preorderHelper(Node *p)
+    // void preorderHelper(Node *p)
+    // {
+    //     if(p ==nullptr) return;
+    //     cout<<p->elem<<" -> ";
+    //     for(Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+    //         preorderHelper(c); 
+    // }
+    void preorderHelper(Node *n) 
     {
-        if (p == nullptr) return;
-        cout << p->elem << " -> ";                             // PRE = visit the node FIRST...
-        for (Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
-            preorderHelper(c);                                 // ...then every child, left to right
+        if(n == nullptr) return;
+        cout<<n->elem<<" -> ";
+        for(Node *c = n->firstChild; c != nullptr; c=c->nextSibling)
+        {
+            preorderHelper(c);
+        }
     }
 
 public:
     void printPreorder()
     {
-        preorderHelper(root);
-        cout << "NULL" << endl;
+       preorderHelper(root);
+       cout<<"NULL"<<endl;
     }
 
     //=====================================================================

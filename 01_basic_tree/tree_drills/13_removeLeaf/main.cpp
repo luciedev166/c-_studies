@@ -39,7 +39,7 @@ using namespace std;
 static int testsRun = 0, testsPassed = 0; 
 static bool curOk = true;
 static string curFails;
-
+ 
 // Run f() and return everything it printed, keeping it off the screen.
 template <typename F>
 string capture(F f)

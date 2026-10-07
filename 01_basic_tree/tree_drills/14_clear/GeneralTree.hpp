@@ -90,7 +90,7 @@ private:
             Node *nxt = c->nextSibling;
             clearHelper(c);
             c = nxt;
-        }
+        } 
         delete n;
     }
  

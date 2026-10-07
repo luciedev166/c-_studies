@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------
  * printPreorder(): visit the node FIRST, then each child (left to right), recursively.
  * 
- * HOW TO USE
+ * HOW TO USE 
  *   1. Open GeneralTree.hpp. Everything ABOVE the "DO NOT CHANGE" line is yours:
  *      read the solved function(s), then comment them out and write your own.
  *   2. Compile and run (AddressSanitizer also catches leaks and bad memory access):
@@ -29,7 +29,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "GeneralTree.hpp"
+#include "GeneralTree.hpp" 
 using namespace std;
 
 // ------------------------------------------------------------------

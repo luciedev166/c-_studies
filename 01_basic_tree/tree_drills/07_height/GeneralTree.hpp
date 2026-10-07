@@ -80,11 +80,35 @@ public:
     //  FUNCTION UNDER PRACTICE: height
     // ---------------------------------------------------------------
 
+    // int height(Node *n)
+    // { 
+    //     if(n == nullptr) return -1;
+    //     int tallest = -1;
+    //     for(Node *c = n->firstChild; c != nullptr; c=c->nextSibling)
+    //     {
+    //         int h = height(c);
+    //         if(h > tallest) tallest = h;
+    //     }
+    //     return tallest + 1;
+    // }
+
+    // int height(Node *n)
+    // {
+    //     if(n == nullptr) return -1;
+    //     int tallest = -1;
+    //     for(Node*c = n->firstChild; c!= nullptr; c=c->nextSibling)
+    //     {
+    //         int h = height(c);
+    //         if(h > tallest) tallest = h;
+    //     }
+    //     return tallest + 1;
+    // }
+
     int height(Node *n)
     {
         if(n == nullptr) return -1;
         int tallest = -1;
-        for(Node *c = n->firstChild; c != nullptr; c=c->nextSibling)
+        for(Node *c = n->firstChild; c!= nullptr; c=c->nextSibling)
         {
             int h = height(c);
             if(h > tallest) tallest = h;

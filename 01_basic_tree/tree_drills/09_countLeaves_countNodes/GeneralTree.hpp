@@ -84,7 +84,7 @@ public:
     {
         if(p == nullptr) return 0;
         int total = 1;
-        for(Node *c = p->firstChild; c != nullptr; c = c->nextSibling)
+        for(Node *c = p->firstChild; c!= nullptr; c=c->nextSibling)
         {
             total += countNodes(c);
         }

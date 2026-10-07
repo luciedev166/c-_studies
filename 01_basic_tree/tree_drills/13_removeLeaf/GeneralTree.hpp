@@ -94,7 +94,7 @@ public:
             if(par->firstChild == n)
             {
                 par->firstChild = n->nextSibling;
-                if(par->firstChild == nullptr) {par->lastChild = nullptr;}
+                if(par->firstChild == nullptr) par->lastChild = nullptr;
             }
             else
             {
@@ -103,16 +103,14 @@ public:
                 {
                     cur = cur->nextSibling;
                 }
+
                 cur->nextSibling = n->nextSibling;
-                if(cur->nextSibling == nullptr)
-                {
-                    par->lastChild = cur;
-                }
+                if(cur->nextSibling == nullptr) par->lastChild = cur;
             }
         }
         int val = n->elem;
-        delete n;
         size--;
+        delete n;
         return val;
     }
 
