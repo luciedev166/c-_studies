@@ -17,7 +17,7 @@ using namespace std;
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
 
-struct Node {
+struct Node { 
     int elem;
     Node *next;
     Node() : elem(0), next(nullptr) {}
@@ -45,14 +45,13 @@ public:
     void printFromHead()
     {
         Node *cur = head;
-        while (cur != nullptr)
+        while(cur != nullptr)
         {
             cout << cur->elem << " -> ";
             cur = cur->next;
         }
-        cout << "NULL" << endl;
+        cout << "NULL"<<endl;
     }
-
     //=====================================================================
     //======== DO NOT CHANGE ANYTHING UNDER THIS LINE ========
     //=====================================================================

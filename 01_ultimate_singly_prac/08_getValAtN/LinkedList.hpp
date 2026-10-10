@@ -17,7 +17,7 @@ using namespace std;
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
 
-struct Node {
+struct Node { 
     int elem;
     Node *next;
     Node() : elem(0), next(nullptr) {}
@@ -44,12 +44,14 @@ public:
 
     // Return the value stored at index pos (0-based). -1 if pos is invalid.
     // Empty list is covered too: size is 0, so every pos is out of range.
-    int getValAtN(int pos)
-    {
-        if (pos < 0 || pos >= size) { cout << "Invalid position" << endl; return -1; }
+    int getValAtN(int n)
+{
+        if(size == 0) return -1;
+        if(n < 0 || n >= size) return -1;
 
+        //kinda confused with the indexing here
         Node *cur = head;
-        for (int i = 0; i < pos; i++)        // walk pos steps from head
+        for(int i = 0; i < n; i++)
         {
             cur = cur->next;
         }

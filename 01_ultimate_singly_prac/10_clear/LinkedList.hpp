@@ -45,13 +45,13 @@ public:
     void clear()
     {
         Node *cur = head;
-        while (cur != nullptr)
+        while(cur != nullptr)
         {
-            Node *nxt = cur->next;           // save next BEFORE deleting
+            Node * nxt = cur->next;
             delete cur;
             cur = nxt;
         }
-        head = nullptr;                      // reset everything, or the list holds dangling pointers
+        head = nullptr;
         tail = nullptr;
         size = 0;
     }

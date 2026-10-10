@@ -7,7 +7,7 @@ using namespace std;
 
 // =====================================================================
 //  DRILL: getVal
-//
+// 
 //  ABOVE the "DO NOT CHANGE" line  = YOUR AREA. Study the solved function,
 //                                    then comment it out and rewrite it yourself.
 //  BELOW the "DO NOT CHANGE" line  = helper functions that main.cpp relies on.
@@ -46,10 +46,11 @@ public:
     // Empty list: the loop never runs, so it falls through to false.
     bool getVal(int val)
     {
+        if(size == 0) return false;
         Node *cur = head;
-        while (cur != nullptr)
+        while(cur != nullptr)
         {
-            if (cur->elem == val) return true;
+            if(cur->elem == val) return true;
             cur = cur->next;
         }
         return false;

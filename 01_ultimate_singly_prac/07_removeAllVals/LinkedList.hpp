@@ -45,49 +45,82 @@ public:
     // Remove EVERY node whose elem == val. Return how many nodes were removed (0 if none).
     int removeAllVals(int val)
     {
+        //gosh this is going to be hard. 
+        //but lets do it this way
+        //loop, find, connect, then move back to head. I KNOW! lots of time wasted but eh
+
+        if(size == 0) return 0;
+
         int count = 0;
+        bool found = false;
 
-        // Step 1: strip matches off the FRONT. A while (not an if), because the
-        // new head can match too: 7 -> 7 -> 7 -> 1 has to lose all three 7s.
-        while (head != nullptr && head->elem == val)
-        {
-            Node *old = head;
-            head = head->next;
-            delete old;
-            size--;
-            count++;
-        }
-
-        // EDGE CASE: list was empty, or every node matched. head is nullptr now,
-        // so tail must be reset too or it dangles.
-        if (head == nullptr)
-        {
-            tail = nullptr;
-            return count;
-        }
- 
-        // Step 2: head is now guaranteed NOT to match, so walk with prev and
-        // look one node ahead (prev->next) at the candidate to delete.
-        Node *prev = head;
-        while (prev->next != nullptr)
-        {
-            if (prev->next->elem == val)
+        while(true && size > 0){
+            //removefront
+            if(head->elem == val)
             {
-                Node *target = prev->next;
-                prev->next = target->next;   // skip over the match
-                if (target == tail) tail = prev;   // EDGE CASE: deleted the last node, move tail back
-                delete target;
-                size--;
+                found = true;
                 count++;
-                // Do NOT advance prev here: the new prev->next might match too (5 -> 6 -> 6 -> 6).
+                Node *toDel = head;
+                head = head->next;
+                if(head == nullptr) tail = head;
+                delete toDel;
+                size--;
+                continue;
             }
-            else
+
+            //removeback
+            if(tail->elem == val)
             {
-                prev = prev->next;           // only advance when nothing was removed
+                found = true;
+                count++;
+                Node *toDel = tail;
+                
+                if(tail == head)
+                {
+                    Node *toDel = head;
+                    head = nullptr;
+                    tail = nullptr;
+                    delete toDel;
+                    size--;
+                }
+                else
+                {
+                    Node *cur = head;
+                    while(cur->next != tail)
+                    {
+                        cur = cur->next;
+                    }
+                    Node *toDel = cur->next;
+                    cur->next = toDel->next;
+                    tail = cur;
+                    delete toDel;
+                    size--;
+                }
+                continue;
             }
+
+            //remove
+            Node *cur = head;
+            while(cur->next != nullptr &&cur->next->elem != val)
+            {
+                cur = cur->next;
+            }
+            if(cur->next == nullptr)//reached end had not found anything
+                break;
+
+            count++;
+            Node *toDel = cur->next;
+            cur->next = cur->next->next;
+            found = true;
+            size--;
+            delete toDel;
+        }
+        if(!found){
+            cout<<"did not find anything"<<endl; return 0;
         }
         return count;
     }
+
 
     //=====================================================================
     //======== DO NOT CHANGE ANYTHING UNDER THIS LINE ========

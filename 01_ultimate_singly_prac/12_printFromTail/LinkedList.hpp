@@ -17,7 +17,7 @@ using namespace std;
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
 
-struct Node {
+struct Node { 
     int elem;
     Node *next;
     Node() : elem(0), next(nullptr) {}
@@ -44,17 +44,17 @@ public:
 
 private:
     // Recurse to the end first, print on the way back.
-    void printBackwardHelper(Node *cur)
+    void helper(Node *n)
     {
-        if (cur == nullptr) return;          // base case: ran past the last node
-        printBackwardHelper(cur->next);      // go deeper first...
-        cout << cur->elem << " -> ";         // ...print while unwinding
+        if(n == nullptr) return;
+        helper(n->next);
+        cout<<n->elem<<" -> ";
     }
 
 public:
     void printFromTail()
     {
-        printBackwardHelper(head);           // recursion does the "backwards" for us
+        helper(head);           // recursion does the "backwards" for us
         cout << "NULL" << endl;
     }
 

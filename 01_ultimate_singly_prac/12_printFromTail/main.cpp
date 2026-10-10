@@ -18,7 +18,7 @@
  *   integrity -> head/tail/size don't agree. Usual cause: tail (or head) not updated
  *                in an edge case (empty list, one node, first/last position).
  *                integrity() is a test-only helper below the DO NOT CHANGE line.
- *
+ * 
  * RULES THESE TESTS ASSUME
  *   - Same format as printFromHead, but starting from the LAST node: 30 -> 20 -> 10 -> NULL
  *   - A singly list has no prev pointers: use recursion (or a stack/array).

@@ -16,7 +16,7 @@ using namespace std;
 //  (The Node struct, members, constructor and destructor are given scaffolding.
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
-
+ 
 struct Node {
     int elem;
     Node *next;
@@ -43,7 +43,7 @@ public:
     // ---------------------------------------------------------------
 
     bool isEmpty() {
-        return head == nullptr;              // (size == 0 also works)
+        return head == nullptr;          // (size == 0 also works)
     }
 
     int getSize() {
