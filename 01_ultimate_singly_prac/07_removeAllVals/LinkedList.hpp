@@ -65,7 +65,7 @@ public:
             tail = nullptr;
             return count;
         }
-
+ 
         // Step 2: head is now guaranteed NOT to match, so walk with prev and
         // look one node ahead (prev->next) at the candidate to delete.
         Node *prev = head;

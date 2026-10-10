@@ -17,14 +17,15 @@ using namespace std;
 //   Keep the names head / tail / size / elem / next: the helpers use them.)
 // =====================================================================
 
-struct Node{
+struct Node
+{
     int elem;
+    Node *head;
     Node *next;
 
-    Node(): elem(0), next(nullptr) {}
-    Node(int val): elem(val), next(nullptr) {}
-    Node(int val,Node * head): elem(val), next(head) {}
-    
+    Node(): elem(0), next(nullptr){}
+    Node(int val): elem(val), next(nullptr){}
+    Node(int val, Node *n): elem(val), next(n){}
 };
 
 class SinglyLinkedList {
@@ -43,15 +44,20 @@ public:
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: addFront
     // ---------------------------------------------------------------
-
     void addFront(int val)
     {
         Node *n = new Node(val, head);
-        head = n;
-        if(tail == nullptr)
-        tail = n;
+        if(head == nullptr)
+        {
+            head = tail = n;
+        }
+        else
+        {
+            head = n;
+        }
         size++;
     }
+
     //=====================================================================
     //======== DO NOT CHANGE ANYTHING UNDER THIS LINE ========
     //=====================================================================

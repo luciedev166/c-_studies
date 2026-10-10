@@ -46,24 +46,58 @@ public:
     // (reuses removeFront / removeBack from below the DO NOT CHANGE line)
     int removeNreturnN(int pos)
     {
-        if(head == nullptr){cout<<"List empty, can't remove."<<endl; return -1;}
+        if(size == 0) return -1;
+        if(pos < 0 || pos >= size) return -1;
 
-        if(pos < 0 || pos >= size) {cout<<"Invalid position."<<endl; return -1;}
-
-        if(pos == 0) return removeFront();
-        if(pos == size - 1) return removeBack();
-
-        Node *cur = head;
-        for(int i = 0; i < pos - 1; i++)
+        int val;
+        if(pos == 0)//remove front
         {
-            cur = cur->next;
+            if(head == tail)
+            {
+                val = head->elem;
+                delete head;
+                head = tail = nullptr;
+            }
+            else
+            {
+                val = head->elem;
+                Node *toDel = head;
+                head= head->next;
+                delete toDel;
+            }
         }
-        Node *toDelete = cur->next;
-        int val = toDelete->elem;
-        cur->next = toDelete->next;
-        delete toDelete;
+        else if(pos == size - 1)//remove tail
+        {
+            // if(head == tail) // only one element no need thatll already be remove front
+            // {
+
+            // }
+            val = tail->elem;
+            Node *cur = head;
+            while(cur->next != tail)
+            {
+                cur = cur->next;
+            }
+            delete cur->next;
+            cur->next = nullptr;
+            tail = cur;
+        }
+        else
+        {
+            Node *cur = head;
+            for(int i = 0; i < pos - 1; i++)
+            {
+                cur = cur->next;
+            }
+            val = cur->next->elem;
+            Node *toDel = cur->next;
+            cur->next = cur->next->next;
+            delete toDel;
+            //no other cases since the new tail is already edited
+        }
         size--;
         return val;
+
     }
 
     //=====================================================================

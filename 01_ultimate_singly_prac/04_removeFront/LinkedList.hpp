@@ -37,20 +37,24 @@ public:
     ~SinglyLinkedList() {
         clear();
     }
-
+ 
     // ---------------------------------------------------------------
     //  FUNCTION UNDER PRACTICE: removeFront
     // ---------------------------------------------------------------
 
+
     int removeFront()
     {
-        if(head == nullptr) {cout << "List is Empty, can't remove" << endl; return -1;}
-
-        Node *old = head;
-        int val = old->elem;
-        head = old->next;
-        if(head == nullptr) tail = nullptr;
+        if(head == nullptr)return -1;
+        int val =  head->elem;
+        Node *toDel = head;
+        head = head->next;
+        if(head == nullptr)
+        {
+            tail = nullptr;
+        }
         size--;
+        delete toDel;
         return val;
     }
 

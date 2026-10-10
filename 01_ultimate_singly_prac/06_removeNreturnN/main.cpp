@@ -18,7 +18,7 @@
  *   integrity -> head/tail/size don't agree. Usual cause: tail (or head) not updated
  *                in an edge case (empty list, one node, first/last position).
  *                integrity() is a test-only helper below the DO NOT CHANGE line.
- *
+ * 
  * RULES THESE TESTS ASSUME
  *   - Returns the removed value; for pos < 0 or pos >= size it returns -1 and the list is unchanged.
  *   - Empty list: returns -1.

@@ -62,7 +62,7 @@ inline void beginTest(const string &label)
     cout << "- " << label << " ... " << flush;
     curOk = true;
     curFails = "";
-    testsRun++;
+    testsRun++; 
 }
 
 inline void expectStr(const string &what, const string &got, const string &want)

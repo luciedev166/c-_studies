@@ -34,7 +34,7 @@ private:
 
 public:
     SinglyLinkedList() : size(0), head(nullptr), tail(nullptr) {}
-
+ 
     ~SinglyLinkedList() {
         clear();
     }
@@ -44,16 +44,45 @@ public:
     // ---------------------------------------------------------------
     void insertAtN(int val, int pos)
     {
-        if(pos <= 0){addFront(val); return;}
-        if(pos >= size){addBack(val); return;}
+        Node *n = new Node(val);
+        //ill manually code the add first and add last here because
+        //there can be a situation where we didnt make the codes first so i need
+        //to get use to this sort of way
 
-        Node *cur = head;
-        for(int i = 0; i < pos - 1; i++)
+        if(pos <= 0) 
         {
-            cur = cur->next;
+            n->next = head;
+            if(head == nullptr)
+            {
+                head = tail = n;
+            }
+            else
+            {
+                head = n;
+            }
         }
-        Node *n = new Node(val, cur->next);
-        cur->next = n;
+        else if(pos >= size)
+        {
+            if(head == nullptr)
+            {
+                head = tail = n;
+            }
+            else
+            {
+                tail->next = n;
+                tail = n;
+            }   
+        }
+        else
+        {
+            Node *cur = head;
+            for(int i = 0; i < pos - 1; i++)
+            {
+                cur = cur->next;
+            }
+            n->next =  cur->next;
+            cur->next = n;
+        }
         size++;
     }
 

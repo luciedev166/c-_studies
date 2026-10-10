@@ -40,12 +40,10 @@ public:
     // ---------------------------------------------------------------
     void addBack(int val)
     {
-        Node *n = new Node;
-        n->elem = val;
-        n->next = nullptr;
+        Node *n = new Node(val, nullptr);
         if(tail == nullptr)
         {
-            tail = head = n;
+            head = tail = n;
         }
         else
         {

@@ -45,28 +45,27 @@ public:
     // (reuses removeFront from below the DO NOT CHANGE line for the one-node case)
     int removeBack()
     {
-        if(head == nullptr){cout<<"Empty List, can't delete"<<endl; return -1;}
-        if(tail == head)
+        int val;
+        if(size == 0)return -1;
+        if(head == tail)
         {
-            Node *old = head;
-            int val = old->elem;
-            head = old->next;
-            delete old;
-            if(head == nullptr) tail = nullptr;
-
-            size--;
-            return val;
+            val = head->elem;
+            delete head;
+            head = nullptr;
+            tail = nullptr;
         }
-
-        Node *cur = head;
-        while(cur->next != tail)
+        else
         {
-            cur = cur->next;
+            val = tail->elem;
+            Node *cur = head;
+            while(cur->next != tail)
+            {
+                cur = cur->next;
+            }
+            delete cur->next;
+            cur->next = nullptr;
+            tail = cur;
         }
-        int val = tail->elem;
-        delete tail;
-        cur->next = nullptr;
-        tail = cur;
         size--;
         return val;
     }
